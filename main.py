@@ -9,4 +9,4 @@ db = MongoEngine(app)
 
 @app.route('/')
 def home():
-    :return "Coming Soon"
+    return "Coming Soon"
