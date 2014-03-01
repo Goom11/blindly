@@ -8,12 +8,12 @@ Clone repo
 
 Install python and pip
 
-``
+```sh
 pip install virtualenv
 virtualenv --distribute venv
 source venv/bin/activate
 pip install -r requirements.txt
-``
+```
 
 Install mongodb and run it in the background
 
