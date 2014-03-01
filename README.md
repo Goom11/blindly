@@ -18,3 +18,9 @@ pip install -r requirements.txt
 Install mongodb and run it in the background
 
 Ask me for the Secret Key
+
+```sh
+foreman start
+```
+
+leave this terminal running in background. webpage will be up on localhost:5000
