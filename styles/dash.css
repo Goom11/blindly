@@ -63,6 +63,10 @@ body {
   left: -50%;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 h1 {
   text-align: center;
   font-family: 'Varela Round', sans-serif;
@@ -71,21 +75,43 @@ h1 {
   margin-bottom: 10px;
 }
 
-h2 {
-  text-align: center;
+form {
+  width: 800px;
   font-family: 'Open Sans', sans-serif;
-  color: #fff;
-  font-size: 2.5em;
-}
-
-p {
-  color: #fff;
-  font-size: 1.5em;
-  text-align: center;
   line-height: 1.6;
+  text-transform: lowercase;
+  font-size: 1.5em;
 }
 
-button {
+legend {
+  font-family: 'Varela Round', sans-serif;
+}
+
+fieldset {
+  border: 1px solid #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+input[type="text"], textarea {
+  font-family: 'Open Sans', sans-serif;
+  width: 500px;
+  height: 30px;
+  float: right;
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  border: 0px solid #fff;
+  font-size: 1em;
+  border-bottom: 2px solid #fff;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+input[type="submit"] {
   padding: 15px;
   border: 1px solid #3f0557;
   color: #fff;
@@ -94,17 +120,17 @@ button {
   width: 300px;
   margin: 0 auto;
   display: block;
-  font-size: 1.5em;
+  font-size: 1em;
   text-transform: lowercase;
   box-shadow: 0 8px 0 #3f0557;
   border-radius: 5px;
 }
 
-button:hover {
+input[type="submit"]:hover {
   cursor: pointer;
 }
 
-button:active {
+input[type="submit"]:active {
   box-shadow: 0 4px 0 #3f0557;
   position: relative;
   top: 4px;
