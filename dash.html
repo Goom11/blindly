@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>blind.ly</title>
+  <link rel="stylesheet" href="./styles/dash.css">
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="content">  
+      <h1>blind.ly</h1>
+      <div id="content-form">
+        <form method="post" enctype="multipart/form-data">
+          <fieldset>
+            <legend>Personal Details</legend>
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="namefield"><br>
+            <label for="desc">Description:</label>
+            <textarea id="desc" type="text" name="descfield"></textarea>
+          </fieldset>
+          <fieldset>
+            <legend>Images</legend>
+            <label for="pf-img">Profile Image:</label>
+            <input id="pf-img" type="file" name="pf-img"><br>
+            <label for="bg-img">Background Image:</label>
+            <input id="bg-img" type="file" name="bg-img"><br>
+          </fieldset>
+          <fieldset>
+            <legend>Social Media</legend>
+            <label for="fb">Facebook:</label>
+            <input id="fb" type="text" name="s-fb"><br>
+            <label for="tw">Twitter:</label>
+            <input id="tw" type="text" name="s-tw"><br>
+            <label for="ig">Instagram:</label>
+            <input id="ig" type="text" name="s-ig"><br>
+          </fieldset>
+          <input type="submit" value="Save">
+        </form>
+      </div>
+    </div>
+  </div>
+ </body>
+</html>
