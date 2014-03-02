@@ -89,7 +89,7 @@ button {
   padding: 15px;
   border: 1px solid #3f0557;
   color: #fff;
-  background-color: rgba(0,0,0,0);
+  background-color: #773194;
   font-family: 'Open Sans', sans-serif;
   width: 300px;
   margin: 0 auto;
@@ -102,7 +102,6 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: #773194;
 }
 
 button:active {
