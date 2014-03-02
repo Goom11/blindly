@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>blind.ly</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="content">  
+      <h1>blind.ly</h1>
+      <div id="content-login">
+        <div id="fb-root">
+          <h2>the difference you can see</h2><br><br>
+          <p>
+            Create a gorgeous free website in minutes, bringing together your social media updates, photos, videos and more into a unified web presence.
+          </p><br><br>  
+          <button id="login" class="none-button" onclick="fbLogin();">Login with Facebook</button>
+        </div>  
+      </div>
+    </div>
+  </div>
+ </body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '693098940740544',
+      status: true,
+      cookie: true,
+      xfbml: true
+    });
+  };
+
+  function fbLogin() {
+    FB.getLoginStatus(function (response) {
+      if (response.status !== 'connected') {
+        FB.login(function (response) {
+          if (response.authResponse) {
+            access_token = response.authResponse.accessToken;
+            user_id = response.authResponse.userID;
+            FB.api('/me', function (response) {
+              console.log(response);
+              fname = response.first_name;
+              lname = response.last_name;
+              username = response.username;
+              uid = response.id;
+              url = "./" + uid;
+              $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                  first_name: fname,
+                  last_name: lname,
+                  username: username,
+                  user_id: uid
+                }
+              });
+            });
+          } else {
+            console.log('cancelled login');
+          }
+        })
+      } else {
+        access_token = response.authResponse.accessToken;
+        user_id = response.authResponse.userID;
+        FB.api('/me', function (response) {
+          console.log(response);
+          fname = response.first_name;
+          lname = response.last_name;
+          username = response.username;
+          uid = response.id;
+          url = "./" + uid;
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+              first_name: fname,
+              last_name: lname,
+              username: username,
+              user_id: uid
+            }
+          });
+        });
+      }
+    });
+  }
+
+  (function () {
+    var e = document.createElement('script');
+    e.src = 'http://connect.facebook.net/en_US/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+  }())
+</script>
+</html>
